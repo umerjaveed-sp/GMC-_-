@@ -5,31 +5,47 @@ import vision3 from "../../assets/about/vision3.jpg";
 
 const Vision = () => {
   return (
-    <section className="w-auto h-[633px] pt-[20px] pb-[80px]  bg-white ">
-      <div className="mx-24 flex  gap-[82px] ">
-        <div className="w-[50%] h-[565px] relative ">
-          <div className="w-[441px] h-[291px]  ">
-            <img src={vision1} className="object-cover rounded-[8px]" alt="" />
+    <section className="w-auto h-auto pt-[20px] pb-[80px] bg-white">
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-24 gap-[20px] sm:gap-[40px] md:gap-[60px] lg:gap-[82px] flex flex-col md:flex-row">
+        {/* Left Column - Images */}
+        <div className="w-full md:w-[50%] h-auto md:h-[565px] relative flex flex-wrap md:block justify-center items-center">
+          <div className="w-[280px] sm:w-[320px] md:w-[380px] lg:w-[441px] h-auto md:h-[291px]">
+            <img
+              src={vision1}
+              className="w-full h-full object-cover rounded-[8px]"
+              alt="vision 1"
+            />
           </div>
-          <div className="w-[397px] h-[265px] mt-1  ">
-            <img src={vision3} className="object-cover rounded-[8px]" alt="" />
+          <div className="w-[250px] sm:w-[290px] md:w-[340px] lg:w-[397px] h-auto md:h-[265px] mt-1">
+            <img
+              src={vision3}
+              className="w-full h-full object-cover rounded-[8px]"
+              alt="vision 3"
+            />
           </div>
-          <div className="w-[279px] h-[419px]  absolute top-10 left-[280px] ">
-            <img src={vision2} className="object-cover rounded-[8px]" alt="" />
+          {/* vision2 - only visible on lg screens */}
+          <div className="hidden lg:block w-[279px] h-[419px] absolute top-10 left-[280px]">
+            <img
+              src={vision2}
+              className="w-full h-full object-cover rounded-[8px]"
+              alt="vision 2"
+            />
           </div>
         </div>
-        <div className="w-[50%] h-[565px]  flex items-end  justify-end pl-12 ">
-          <div className="w-[604px] h-[398px]  ">
+
+        {/* Right Column - Text Content */}
+        <div className="w-full md:w-[50%] h-auto md:h-[565px] flex items-start md:items-end justify-start md:justify-end pl-0 md:pl-6 lg:pl-12">
+          <div className="w-full md:w-[500px] lg:w-[604px] h-auto md:h-[398px]">
             <div>
-              <div className="text-black h-[75px] font-semibold text-[80px]">
+              <div className="text-black h-[50px] sm:h-[60px] md:h-[70px] lg:h-[75px] font-semibold text-[45px] sm:text-[55px] md:text-[65px] lg:text-[80px] leading-[1.2] md:leading-[1.1]">
                 Our
               </div>
-              <div className="text-[#5FA016]  h-[75px] font-semibold text-[80px]">
+              <div className="text-[#5FA016] h-[50px] sm:h-[60px] md:h-[70px] lg:h-[75px] font-semibold text-[45px] sm:text-[55px] md:text-[65px] lg:text-[80px] leading-[1.2] md:leading-[1.1]">
                 Vision
               </div>
             </div>
-            <div className="mt-12">
-              <p>
+            <div className="mt-4 sm:mt-6 md:mt-8 lg:mt-12">
+              <p className="text-sm sm:text-base md:text-base lg:text-base leading-relaxed">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
                 vitae provident quaerat! Hic nisi praesentium facere, tempore
                 illum enim inventore pariatur laboriosam ea animi fugiat atque
