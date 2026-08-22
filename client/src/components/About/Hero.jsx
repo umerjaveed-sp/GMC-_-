@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="h-[30px] sm:h-[20px] md:h-[25px] lg:h-[60px]  text-[#021A54]">
               Mind
             </div>
-            <div className="h-[30px] sm:h-[20px] md:h-[25px] lg:h-[60px] text-[#021A54] w-full">
+            <div className="h-[30px] sm:h-[20px] md:h-[25px] lg:h-[60px]  text-[#021A54] w-full">
               Consultant
             </div>
           </div>
