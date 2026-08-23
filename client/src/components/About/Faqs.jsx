@@ -60,29 +60,40 @@ const Faqs = () => {
   };
 
   return (
-    <section className="w-auto h-auto min-h-[968px] gap-[32px] py-[48px] bg-white px-16">
-      <div className="mx-10">
+    <section className="w-auto h-auto min-h-[968px] gap-[32px] py-[48px] bg-white px-4 sm:px-8 lg:px-16">
+      <div className="mx-4 sm:mx-6 lg:mx-10">
         <div className="flex items-center justify-center flex-col space-y-5">
-          <h1 className="text-[#74BF1A] text-[40px] font-semibold">FAQs</h1>
-          <p className="text-gray-500">
+          <h1 className="text-[#74BF1A] text-[28px] sm:text-[32px] lg:text-[40px] font-semibold text-center">
+            FAQs
+          </h1>
+          <p className="text-gray-500 text-sm sm:text-base lg:text-base text-center">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
 
         {faqs.map((faq) => (
           <div key={faq.id}>
-            <div className="mt-5 w-full max-w-[1237px] h-auto">
+            <div className="mt-5 w-full max-w-[1237px] h-auto mx-auto">
               <div
-                className="flex items-center gap-5 justify-center h-auto min-h-[92px] text-[#79767D] border border-b-[#605D64] border-t-0 border-l-0 border-r-0 w-full max-w-[1150px] cursor-pointer  transition-colors py-3"
+                className="flex items-center gap-3 sm:gap-5 justify-center h-auto min-h-[72px] sm:min-h-[92px] text-[#79767D] border border-b-[#605D64] border-t-0 border-l-0 border-r-0 w-full max-w-[1150px] cursor-pointer transition-colors py-3"
                 onClick={() => toggleFaq(faq.id)}
               >
-                <div className="w-[48px] h-[48px] rounded-[6px] flex items-center justify-center border-2 border-[#938F96] flex-shrink-0">
-                  <div className="text-[25px] font-semibold">{faq.id}</div>
+                {/* ID Box */}
+                <div className="w-[36px] sm:w-[48px] h-[36px] sm:h-[48px] rounded-[6px] flex items-center justify-center border-2 border-[#938F96] flex-shrink-0">
+                  <div className="text-[18px] sm:text-[25px] font-semibold">
+                    {faq.id}
+                  </div>
                 </div>
+
+                {/* Question */}
                 <div className="flex-1 p-2">
-                  <p className="font-medium text-[#322F35]">{faq.question}</p>
+                  <p className="font-medium text-[#322F35] text-sm sm:text-base lg:text-base">
+                    {faq.question}
+                  </p>
                 </div>
-                <div className="w-[48px] h-[48px] rounded-[6px] flex items-center justify-center flex-shrink-0">
+
+                {/* Arrow Icon */}
+                <div className="w-[36px] sm:w-[48px] h-[36px] sm:h-[48px] rounded-[6px] flex items-center justify-center flex-shrink-0">
                   <div className="text-[25px] mt-5">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +101,7 @@ const Faqs = () => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className={`size-5 transition-transform duration-300 ${
+                      className={`size-4 sm:size-5 transition-transform duration-300 ${
                         openFaq === faq.id ? "rotate-180" : ""
                       }`}
                     >
@@ -112,8 +123,8 @@ const Faqs = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="pl-[68px] pr-4 py-4 text-gray-600 border-b border-[#605D64]">
-                  <p>{faq.answer}</p>
+                <div className="pl-[50px] sm:pl-[68px] pr-4 py-4 text-gray-600 border-b border-[#605D64]">
+                  <p className="text-sm sm:text-base">{faq.answer}</p>
                 </div>
               </div>
             </div>

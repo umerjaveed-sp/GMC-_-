@@ -9,12 +9,14 @@ import Faqs from "../components/About/Faqs";
 const About = () => {
   return (
     <>
-      <Hero />
-      <Vision />
-      <Provide />
-      <Benifits />
-      <ChooseUs />
-      <Faqs />
+      <div className="overflow-hidden">
+        <Hero />
+        <Vision />
+        <Provide />
+        <Benifits />
+        <ChooseUs />
+        <Faqs />
+      </div>
     </>
   );
 };

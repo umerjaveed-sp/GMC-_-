@@ -5,13 +5,13 @@ const Hero = () => {
   const nevigate = useNavigate();
   return (
     <section className="w-auto h-auto sm:mr-4 md:mr-8">
-      <div className="lg:mt-32 mt-16 grid   relative grid-cols-1 md:grid-cols-2 px-10 lg:grid-cols-2 gap-[32px]">
+      <div className="lg:mt-32 mt-16 grid   relative grid-cols-1 md:grid-cols-2 px-4 lg:grid-cols-2 gap-[32px]">
         <div
-          className="h-auto flex w-auto mr-10  flex-col items-start  [@media(min-width:640px)_and_(max-width:767px)]:mb-16 mt-10 
+          className="h-auto flex w-auto mr-20  flex-col items-start  [@media(min-width:640px)_and_(max-width:767px)]:mb-16 mt-10 
         
       s "
         >
-          <div className="w-[292px] h-[144px]  -rotate-90 absolute left-0 top-0 [@media(max-width:640px)]:top-16  [@media(max-width:640px)]:left-[10px]   md:top-[120px] md:left-0 lg:top-[75px] flex items-start justify-center mx-auto lg:mx-0 [@media(min-width:640px)_and_(max-width:767px)]:left-[150px]">
+          <div className=" w-[170px] md:w-[292px] lg:w-[292px] h-[144px]  -rotate-90 absolute left-0 top-0 [@media(max-width:640px)]:top-16  [@media(max-width:640px)]:left-[10px]   md:top-[120px] md:left-0 lg:top-[75px] flex items-start justify-center mx-auto lg:mx-0 [@media(min-width:640px)_and_(max-width:767px)]:left-[150px] [@media(min-width:640px)_and_(max-width:767px)]:w-[292px]">
             <div className="">
               <h1 className="text-gray-800   [@media(min-width:640px)_and_(max-width:767px)]:text-[40px] font-semibold text-[40px] [@media(max-width:640px)]:text-[60px]  md:text-[50px] lg:text-[80px] ">
                 About
@@ -19,7 +19,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="w-[478px] [@media(max-width:640px)]:text-[50px] [@media(max-width:640px)]:left-[160px]  [@media(max-width:640px)]:top-16 h-[292px] absolute lg:left-[180px] md:left-[140px] md:top-[120px] font-semibold  left-[200px] text-[30px] lg:top-[10px]  md:text-[40px] lg:text-[80px] flex flex-col items-start mx-auto [@media(min-width:640px)_and_(max-width:767px)]:left-[275px] [@media(min-width:640px)_and_(max-width:767px)]:text-[35px] [@media(min-width:640px)_and_(max-width:767px)]:top-2 space-y-4 [@media(max-width:640px)]:space-y-4 [@media(max-width:640px)]:mb-0">
+          <div className="w-[478px]  [@media(max-width:640px)]:text-[50px] [@media(max-width:640px)]:left-[100px]  [@media(max-width:640px)]:top-16 h-[292px] absolute lg:left-[180px] md:left-[140px] md:top-[120px] font-semibold  left-[200px] text-[30px] lg:top-[10px]  md:text-[40px] lg:text-[80px] flex flex-col items-start mx-auto [@media(min-width:640px)_and_(max-width:767px)]:left-[275px] [@media(min-width:640px)_and_(max-width:767px)]:text-[35px] [@media(min-width:640px)_and_(max-width:767px)]:top-2 space-y-4 [@media(max-width:640px)]:space-y-4 [@media(max-width:640px)]:mb-0">
             <div className="h-[30px] sm:h-[20px] md:h-[25px] lg:h-[60px]  text-[#5FA016]">
               Global
             </div>
