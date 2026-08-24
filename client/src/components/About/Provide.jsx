@@ -52,10 +52,10 @@ const Provide = () => {
       <div className="mx-12 space-y-5">
         {/* Header */}
         <div className="flex flex-col items-center justify-center text-center space-y-2">
-          <h1 className="text-[#5FA016] text-[20px] sm:text-[22px] md:text-[25px] font-semibold">
+          <h1 className="text-[#5FA016] text-[18px] sm:text-[20px] md:text-[22px] lg:text-[25px] font-semibold">
             What We Provide
           </h1>
-          <h1 className="text-gray-800 text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] font-bold">
+          <h1 className="text-gray-800 text-[22px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-bold leading-tight">
             Benefits of Global Mind Consultant
           </h1>
         </div>
