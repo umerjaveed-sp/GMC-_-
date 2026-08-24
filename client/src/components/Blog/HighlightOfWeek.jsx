@@ -18,22 +18,22 @@ const HighlightOfWeek = () => {
         </div>
 
         <div
-          className="w-auto h-auto lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[16px] mt-6 sm:mt-8 md:mt-10 lg:mt-10 relative p-3 sm:p-4 md:p-5 lg:p-5 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0"
+          className="w-auto h-auto lg:h-[600px] bg-cover bg-center bg-no-repeat rounded-[16px] mt-6 sm:mt-8 md:mt-10 lg:mt-10 relative p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0"
           style={{ backgroundImage: `url(${library})` }}
         >
           {/* Card - Left Side */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] lg:w-[394px] h-auto min-h-[450px] sm:min-h-[480px] md:min-h-[520px] lg:h-[557px] p-4 sm:p-5 gap-2 flex flex-col">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden w-full max-w-[280px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[380px] h-auto min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px] p-3 sm:p-4 md:p-5 lg:p-6 gap-2 sm:gap-3 md:gap-4 flex flex-col">
             {/* Image Section */}
             <div className="rounded-[8px] flex items-center justify-center w-full border">
               <img
                 src={webenar}
                 alt="blog"
-                className="w-full max-w-[320px] sm:max-w-[360px] md:max-w-[380px] lg:w-[366px] h-[150px] sm:h-[170px] md:h-[185px] lg:h-[205px] rounded-[12px] object-cover"
+                className="w-full h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px] rounded-[12px] object-cover"
               />
             </div>
 
             <div className="flex items-center justify-between text-[#041C47]">
-              <div className="flex gap-1 sm:gap-2 items-center">
+              <div className="flex gap-1 sm:gap-1.5 md:gap-2 items-center">
                 <div>
                   <svg
                     width="20"
@@ -42,12 +42,12 @@ const HighlightOfWeek = () => {
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="w-5 sm:w-5 md:w-6 lg:w-6 h-5 sm:h-5 md:h-6 lg:h-6"
+                    className="w-4 sm:w-4.5 md:w-5 lg:w-5.5 h-4 sm:h-4.5 md:h-5 lg:h-5.5"
                   >
                     <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                   </svg>
                 </div>
-                <div className="font-semibold text-sm sm:text-base md:text-lg lg:text-[20px]">
+                <div className="font-semibold text-xs sm:text-sm md:text-base lg:text-[18px]">
                   Blog Category
                 </div>
               </div>
@@ -59,7 +59,7 @@ const HighlightOfWeek = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-5 sm:size-5 md:size-6 lg:size-6"
+                  className="size-4 sm:size-4.5 md:size-5 lg:size-5.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -71,12 +71,12 @@ const HighlightOfWeek = () => {
             </div>
 
             {/* Content Section */}
-            <div className="space-y-2 flex-1 flex flex-col">
-              <div className="space-y-1 sm:space-y-2">
-                <h3 className="text-xl sm:text-2xl md:text-[25px] text-[#322F35] font-bold">
+            <div className="space-y-1.5 sm:space-y-2 md:space-y-2.5 flex-1 flex flex-col">
+              <div className="space-y-1 sm:space-y-1.5 md:space-y-2">
+                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#322F35] font-bold leading-tight line-clamp-2">
                   Technology
                 </h3>
-                <p className="text-xs sm:text-sm text-[#605D64] leading-relaxed line-clamp-3">
+                <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-[#605D64] leading-relaxed line-clamp-2 sm:line-clamp-3 md:line-clamp-3">
                   Lorem ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem ipsum has been the industry's
                   standard dummy text ever since the 1500s.
@@ -84,15 +84,15 @@ const HighlightOfWeek = () => {
               </div>
 
               {/* Event Details */}
-              <div className="flex-1 space-y-1.5 sm:space-y-2">
-                <div className="flex gap-2 sm:gap-3 md:gap-4 items-center">
+              <div className="flex-1 space-y-1 sm:space-y-1.5 md:space-y-2 lg:space-y-2.5">
+                <div className="flex gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-4 sm:size-5 md:size-5 lg:size-6 text-[#062254] flex-shrink-0"
+                    className="size-3.5 sm:size-4 md:size-4.5 lg:size-5 text-[#062254] flex-shrink-0"
                   >
                     <path
                       strokeLinecap="round"
@@ -100,19 +100,19 @@ const HighlightOfWeek = () => {
                       d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
                     />
                   </svg>
-                  <span className="font-semibold text-xs sm:text-sm md:text-sm lg:text-base text-[#605D64]">
+                  <span className="font-semibold text-[10px] sm:text-xs md:text-sm lg:text-base text-[#605D64]">
                     05 May, 2025
                   </span>
                 </div>
 
-                <div className="flex gap-2 sm:gap-3 md:gap-4 items-center">
+                <div className="flex gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={1.5}
                     stroke="currentColor"
-                    className="size-4 sm:size-5 md:size-5 lg:size-6 text-[#062254] flex-shrink-0"
+                    className="size-3.5 sm:size-4 md:size-4.5 lg:size-5 text-[#062254] flex-shrink-0"
                   >
                     <path
                       strokeLinecap="round"
@@ -120,7 +120,7 @@ const HighlightOfWeek = () => {
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
-                  <span className="font-semibold text-xs sm:text-sm md:text-sm lg:text-base text-[#605D64]">
+                  <span className="font-semibold text-[10px] sm:text-xs md:text-sm lg:text-base text-[#605D64]">
                     Mr. Josh
                   </span>
                 </div>
@@ -128,7 +128,7 @@ const HighlightOfWeek = () => {
 
               {/* Read More Button */}
               <button
-                className="flex items-center justify-center w-full max-w-[100px] sm:max-w-[110px] md:max-w-[120px] lg:max-w-[120px] h-[36px] sm:h-[38px] md:h-[40px] lg:h-[44px] px-1 py-1 gap-2 rounded-lg bg-[#062254] font-medium text-white hover:bg-[#071731] transition-all duration-200 text-xs sm:text-sm md:text-sm lg:text-base"
+                className="flex items-center justify-center w-full max-w-[90px] sm:max-w-[100px] md:max-w-[120px] lg:max-w-[140px] h-[30px] sm:h-[32px] md:h-[36px] lg:h-[40px] px-1 py-1 gap-2 rounded-lg bg-[#062254] font-medium text-white hover:bg-[#071731] transition-all duration-200 text-[10px] sm:text-xs md:text-sm lg:text-base"
                 onClick={() => navigate("/blogPage")}
               >
                 Read More
@@ -138,17 +138,17 @@ const HighlightOfWeek = () => {
 
           {/* Right Side Content - Hidden on mobile, visible on larger screens */}
           <div className="hidden sm:block lg:block mr-0 sm:mr-4 md:mr-6 lg:mr-10 w-full sm:w-auto">
-            <div className="w-full sm:w-[500px] md:w-[550px] lg:w-[649px] h-auto sm:min-h-[280px] md:min-h-[320px] lg:h-[348px] rounded-[16px] border bg-[#041C47]/30 p-4 sm:p-6 md:p-8 lg:p-0">
-              <div className="w-full sm:max-w-[500px] md:max-w-[550px] lg:w-[728px] h-auto min-h-[150px] sm:min-h-[180px] md:min-h-[200px] lg:h-[208px] gap-4 sm:gap-5 md:gap-6 lg:gap-[24px] text-white m-4 sm:m-6 md:m-8 lg:m-10">
-                <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+            <div className="w-full sm:w-[480px] md:w-[520px] lg:w-[649px] h-auto sm:min-h-[280px] md:min-h-[320px] lg:h-[348px] rounded-[16px] border bg-[#041C47]/30 p-4 sm:p-6 md:p-8 lg:p-10">
+              <div className="w-full sm:max-w-[450px] md:max-w-[500px] lg:w-[728px] h-auto min-h-[120px] sm:min-h-[150px] md:min-h-[180px] lg:h-[208px] gap-3 sm:gap-4 md:gap-5 lg:gap-[24px] text-white m-3 sm:m-4 md:m-6 lg:m-10">
+                <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-8">
                   <div>
-                    <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[30px] font-semibold">
+                    <h1 className="text-lg sm:text-xl md:text-2xl lg:text-[30px] font-semibold leading-tight">
                       Lorem Ipsum is simply <br /> dummy text of the <br />{" "}
                       printing
                     </h1>
                   </div>
-                  <div className="w-full sm:max-w-[400px] md:max-w-[450px] lg:w-[513px] h-auto min-h-[80px] lg:h-[96px]">
-                    <p className="text-xs sm:text-sm md:text-base lg:text-base">
+                  <div className="w-full sm:max-w-[380px] md:max-w-[420px] lg:w-[513px] h-auto min-h-[60px] sm:min-h-[70px] md:min-h-[80px] lg:h-[96px]">
+                    <p className="text-xs sm:text-sm md:text-base lg:text-base leading-relaxed">
                       Lorem Ipsum is simply dummy text of the printing and
                       typesetting industry. Lorem Ipsum has been the industry's
                       standard dummy text ever since the 1500s, when an unknown
