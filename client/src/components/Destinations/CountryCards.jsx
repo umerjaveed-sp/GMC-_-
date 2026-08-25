@@ -23,33 +23,33 @@ const countries = [
 
 const CountryCards = () => {
   return (
-    <section className="w-auto h-auto">
-      <div className="mx-20">
-        <div className="mb-10">
-          <div className="flex items-center justify-center flex-col space-y-2">
-            <h1 className="text-[24px] text-[#74BF1A] font-bold">
+    <section className="w-full h-auto">
+      <div className="px-4 sm:px-8 md:px-12 lg:px-20">
+        <div className="mb-6 sm:mb-8 md:mb-10">
+          <div className="flex items-center justify-center flex-col space-y-1 sm:space-y-2 md:space-y-3">
+            <h1 className="text-[#74BF1A] font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
               Study Abroad
             </h1>
-            <h1 className="text-gray-800 items-center font-semibold text-[40px]">
+            <h2 className="text-gray-800 text-center font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl leading-tight">
               Explore Comprehensive Information on Top
-            </h1>
-            <h1 className="text-gray-800 items-center font-semibold text-[40px]">
+            </h2>
+            <h2 className="text-gray-800 text-center font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl leading-tight">
               Study Destinations Around the Globe
-            </h1>
+            </h2>
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-8 my-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 my-6 sm:my-8 md:my-10">
           {countries.map((country) => (
             <div
               key={country.name}
-              className="w-[350px] h-[553px] rounded-[16px] overflow-hidden flex-shrink-0"
+              className="w-full max-w-[350px] mx-auto lg:max-w-full h-[350px] sm:h-[390px] md:h-[450px] lg:h-[553px] rounded-[16px] overflow-hidden flex-shrink-0"
             >
               <div
                 className="w-full h-full bg-cover bg-center bg-no-repeat flex items-end justify-center transition-transform duration-300 hover:scale-110"
                 style={{ backgroundImage: `url(${country.image})` }}
               >
-                <div className="font-bold text-[56px] text-white mb-12">
+                <div className="font-bold text-[32px] sm:text-[40px] md:text-[48px] lg:text-[56px] text-white mb-6 sm:mb-8 md:mb-10 lg:mb-12">
                   {country.name}
                 </div>
               </div>

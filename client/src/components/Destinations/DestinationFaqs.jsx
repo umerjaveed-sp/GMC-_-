@@ -58,61 +58,76 @@ const DestinationFaqs = () => {
   const toggleFaq = (id) => {
     setOpenFaq(openFaq === id ? null : id);
   };
+
   return (
-    <section className="w-auto h-auto min-h-[968px] gap-[32px] py-[48px]  px-16">
-      <div className="mx-10">
-        <div className="flex items-center justify-center flex-col space-y-5">
-          <h1 className="text-[#74BF1A] text-[40px] font-semibold">FAQs</h1>
-          <p className="text-gray-500">
+    <section className="w-full h-auto min-h-[968px] gap-[32px] py-[32px] sm:py-[40px] md:py-[48px] px-4 sm:px-6 md:px-10 lg:px-16">
+      <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-10">
+        {/* Header */}
+        <div className="flex items-center justify-center flex-col space-y-2 sm:space-y-3 md:space-y-5 mb-6 sm:mb-8 md:mb-10">
+          <h1 className="text-[#74BF1A] text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-semibold">
+            FAQs
+          </h1>
+          <p className="text-gray-500 text-sm sm:text-base text-center px-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
           </p>
         </div>
 
+        {/* FAQ Items */}
         {faqs.map((faq) => (
-          <div key={faq.id}>
-            <div className="mt-5 w-full max-w-[1237px] h-auto">
+          <div key={faq.id} className="w-full">
+            <div className="mt-3 sm:mt-4 md:mt-5 w-full max-w-[1237px] mx-auto h-auto">
+              {/* FAQ Question */}
               <div
-                className="flex items-center gap-5 justify-center h-auto min-h-[92px] text-[#79767D] border border-b-[#605D64] border-t-0 border-l-0 border-r-0 w-full max-w-[1150px] cursor-pointer  transition-colors py-3"
+                className="flex items-center gap-3 sm:gap-4 md:gap-5 justify-center h-auto min-h-[72px] sm:min-h-[82px] md:min-h-[92px] text-[#79767D] border border-b-[#605D64] border-t-0 border-l-0 border-r-0 w-full max-w-[1150px] mx-auto cursor-pointer transition-colors py-2 sm:py-3"
                 onClick={() => toggleFaq(faq.id)}
               >
-                <div className="w-[48px] h-[48px] rounded-[6px] flex items-center justify-center border-2 border-[#938F96] flex-shrink-0">
-                  <div className="text-[25px] font-semibold">{faq.id}</div>
-                </div>
-                <div className="flex-1 p-2">
-                  <p className="font-medium text-[#322F35]">{faq.question}</p>
-                </div>
-                <div className="w-[48px] h-[48px] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <div className="text-[25px] mt-5">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className={`size-5 transition-transform duration-300 ${
-                        openFaq === faq.id ? "rotate-180" : ""
-                      }`}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
+                {/* Number Circle */}
+                <div className="w-[36px] h-[36px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-[6px] flex items-center justify-center border-2 border-[#938F96] flex-shrink-0">
+                  <div className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[25px] font-semibold">
+                    {faq.id}
                   </div>
+                </div>
+
+                {/* Question Text */}
+                <div className="flex-1 p-1 sm:p-2">
+                  <p className="font-medium text-[#322F35] text-sm sm:text-base lg:text-base">
+                    {faq.question}
+                  </p>
+                </div>
+
+                {/* Arrow Icon */}
+                <div className="w-[36px] h-[36px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className={`w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 ${
+                      openFaq === faq.id ? "rotate-180" : ""
+                    }`}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
                 </div>
               </div>
 
-              {/* Answer dropdown */}
+              {/* Answer Dropdown */}
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openFaq === faq.id
-                    ? "max-h-[500px] opacity-100"
+                    ? "max-h-[800px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="pl-[68px] pr-4 py-4 text-gray-600 border-b border-[#605D64]">
-                  <p>{faq.answer}</p>
+                <div className="pl-[48px] sm:pl-[58px] md:pl-[62px] lg:pl-[68px] pr-3 sm:pr-4 py-3 sm:py-4 text-gray-600 border-b border-[#605D64] max-w-[1150px] mx-auto">
+                  <p className="text-sm sm:text-base lg:text-base leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             </div>
