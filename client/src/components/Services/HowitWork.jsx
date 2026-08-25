@@ -6,16 +6,18 @@ import task from "../../assets/services/completedtask.png";
 const HowitWork = () => {
   return (
     <section className="w-auto h-auto bg-white relative  ">
-      <div className=" py-12 gap-[10px] mx-20  ">
+      <div className=" lg:py-12 md:py-10 sm:py-8 py-6 gap-[10px] mx-20  ">
         <div className="">
-          <h1 className="text-gray-800  font-bold text-[25px]">
+          <h1 className="text-gray-800 font-bold text-[20px] sm:text-[22px] md:text-[25px]">
             How it Work ?
           </h1>
         </div>
         <div className="">
           <svg
             viewBox="0 0 456 65.67"
-            className="w-[456px] h-[65.67px] absolute top-[130px] left-[200px]"
+            className="lg:w-[25rem] lg:h-[15rem] lg:block absolute  lg:top-[50px] lg:left-[200px]
+            md:w-[15rem] md:h-[15rem] md:top-[60px] md:block md:left-[170px] sm:w-[11rem] sm:h-[6rem]  sm:left-[180px] sm:block sm:top-[80px] hidden
+            "
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -42,30 +44,33 @@ const HowitWork = () => {
               markerEnd="url(#arrowhead)"
             />
           </svg>
-          <div className="flex items-center justify-between mt-[120px]">
-            <div className="w-[285px] h-[195px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
-              <div className="w-[73px] h-[73px] ">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap md:flex-nowrap items-center gap-4 sm:gap-6 md:gap-8 justify-center md:justify-between mt-[20px] sm:mt-[60px] md:mt-[120px]">
+            <div className="lg:w-[285px] lg:h-[195px] md:w-[230px] md:h-[150px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
+              <div
+                className="lg:w-[73px] lg:h-[73px] md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] w-[25px] h-[25px]
+              "
+              >
                 <img src={earth} alt="" />
               </div>
-              <div className="text-[20px] text-[#74BF1A]">
+              <div className="lg:text-[20px] md:text-[15px]  text-[13px] text-[#74BF1A]">
                 Search by Country,
                 <br /> Degree, Funding
               </div>
             </div>
-            <div className="w-[285px] h-[195px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
-              <div className="w-[73px] h-[73px] ">
+            <div className="lg:w-[285px] lg:h-[195px] md:w-[230px] md:h-[150px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
+              <div className="lg:w-[73px] lg:h-[73px] md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] w-[25px] h-[25px] ">
                 <img src={universty} alt="" />
               </div>
-              <div className="text-[20px] text-[#74BF1A]">
+              <div className="lg:text-[20px] md:text-[15px] text-[13px] text-[#74BF1A]">
                 Search by Country,
                 <br /> Degree, Funding
               </div>
             </div>
-            <div className="w-[285px] h-[195px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
-              <div className="w-[73px] h-[73px] ">
+            <div className="lg:w-[285px] lg:h-[195px] md:w-[230px] md:h-[150px] rounded-[8px] py-6 px-4 gap-4 bg-[#092962] flex items-center justify-center flex-col">
+              <div className="lg:w-[73px] lg:h-[73px] md:w-[60px] md:h-[60px] sm:w-[40px] sm:h-[40px] w-[25px] h-[25px]">
                 <img src={task} alt="" />
               </div>
-              <div className="text-[20px] text-[#74BF1A]">
+              <div className="lg:text-[20px] md:text-[15px] text-[13px] text-[#74BF1A]">
                 Search by Country,
                 <br /> Degree, Funding
               </div>
@@ -74,13 +79,8 @@ const HowitWork = () => {
           <div className="relative w-full bg-white" style={{ height: "100px" }}>
             <svg
               viewBox="0 0 456 65.67"
-              className="absolute"
-              style={{
-                width: "456px",
-                height: "65.67px",
-                left: "600px",
-                top: "10px",
-              }}
+              className="absolute  lg:block lg:w-[25rem] lg:h-[5rem] lg:left-[600px] lg:top-0  
+            md:w-[15rem] md:h-[3rem] md:block md:top-0 md:left-[350px] sm:w-[11rem] sm:h-[2rem]  sm:left-[270px] sm:top-[0px] sm:block hidden"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >

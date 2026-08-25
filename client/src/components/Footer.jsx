@@ -15,7 +15,7 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="w-auto bg-white">
+    <footer className="w-auto  bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
         {/* Main Footer Content - Responsive Grid with Centered Items */}
         <div className="grid ml-2 grid-cols-2  items-start sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 lg:gap-4 justify-center">
