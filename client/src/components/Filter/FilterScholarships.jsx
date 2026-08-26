@@ -161,31 +161,32 @@ const FilterScholarships = () => {
     { id: 8 },
     { id: 9 },
   ];
+
   return (
     <>
       <FilterHero />
       <div>
-        <div className="w-auto h-auto mx-16 my-10 flex gap-8 ">
-          {/* left-Side */}
-          <div className="w-auto h-auto mb-10">
-            <div className="w-[286px] h-auto bg-white border border-gray-200 rounded-lg  overflow-y-auto ">
+        <div className="w-auto h-auto px-4 sm:px-6 md:px-8 lg:px-24 my-6 md:my-10 flex flex-col lg:flex-row gap-6 md:gap-8">
+          {/* left-Side - Filter Sidebar */}
+          <div className="w-full lg:w-[286px] h-auto mb-6 lg:mb-10 lg:sticky lg:top-[90px] lg:self-start">
+            <div className="w-full lg:w-[286px] h-auto bg-white border border-gray-200 rounded-lg overflow-y-auto">
               {/* Header */}
-              <div className="w-auto h-[92px] flex items-center justify-around bg-[#98D94A]">
-                <div className="text-[24px] font-bold text-white ">Filters</div>
-
-                {/* Discover All */}
-                <div className="">
-                  <button className="w-full text-[16px]   text-[#092962] font-semibold ">
+              <div className="w-auto h-[72px] md:h-[92px] flex items-center justify-around bg-[#98D94A] px-4">
+                <div className="text-[20px] md:text-[24px] font-bold text-white">
+                  Filters
+                </div>
+                <div>
+                  <button className="w-full text-[14px] md:text-[16px] text-[#092962] font-semibold">
                     Discover All
                   </button>
                 </div>
               </div>
 
               {/* Countries Section */}
-              <div className=" ">
+              <div>
                 <div className="pt-[8px] px-2 pb-[24px] shadow-lg">
                   <div className="flex items-center justify-between mb-2">
-                    <div className="text-[16px]   text-[#605D64]  ">
+                    <div className="text-[14px] md:text-[16px] text-[#605D64]">
                       Countries
                     </div>
                     <div>
@@ -209,82 +210,68 @@ const FilterScholarships = () => {
                     </div>
                   </div>
 
-                  {/* Search Country */}
-
-                  {openCountries ? (
-                    <>
-                      <div
-                        className={`overflow-hidden transition-all duration-1000 ease-in-out ${
-                          openCountries
-                            ? "max-h-[500px] opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <div className="relative mb-3">
-                          <input
-                            type="text"
-                            placeholder="Search Country"
-                            value={searchCountry}
-                            onChange={(e) => setSearchCountry(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A] "
+                  {openCountries && (
+                    <div className="overflow-hidden transition-all duration-1000 ease-in-out">
+                      <div className="relative mb-3">
+                        <input
+                          type="text"
+                          placeholder="Search Country"
+                          value={searchCountry}
+                          onChange={(e) => setSearchCountry(e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A]"
+                        />
+                        <svg
+                          className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           />
-                          <svg
-                            className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                        </div>
+                        </svg>
+                      </div>
 
-                        {/* Country List with Scrollbar */}
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {countries
-                            .filter((country) =>
-                              country
-                                .toLowerCase()
-                                .includes(searchCountry.toLowerCase()),
-                            )
-                            .map((country, index) => (
-                              <label
-                                key={index}
-                                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
-                              >
-                                <input
-                                  type="checkbox"
-                                  checked={selectedCountries.includes(country)}
-                                  onChange={() => handleCountryChange(country)}
-                                  className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
-                                />
-                                <span>{country}</span>
-                              </label>
-                            ))}
-                        </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {countries
+                          .filter((country) =>
+                            country
+                              .toLowerCase()
+                              .includes(searchCountry.toLowerCase()),
+                          )
+                          .map((country, index) => (
+                            <label
+                              key={index}
+                              className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={selectedCountries.includes(country)}
+                                onChange={() => handleCountryChange(country)}
+                                className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
+                              />
+                              <span>{country}</span>
+                            </label>
+                          ))}
+                      </div>
 
-                        {/* Discover Button */}
-                        <div className="flex items-center justify-center mt-5">
-                          <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold">
-                            <div>Discover</div>
-                          </div>
+                      <div className="flex items-center justify-center mt-5">
+                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
+                          Discover
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
+                    </div>
                   )}
                 </div>
 
                 <div className="shadow-lg px-2 pb-[24px]">
                   {/* Degree Level Section */}
-                  <div className="mt-[24px] ">
-                    <div className="flex items-center justify-between ">
-                      <div className="text-[16px] text-[#605D64]">
+                  <div className="mt-[24px]">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[14px] md:text-[16px] text-[#605D64]">
                         Degree Level
                       </div>
                       <div>
@@ -294,7 +281,7 @@ const FilterScholarships = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className={` cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
+                          className={`cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
                             !openDegrees ? "rotate-180" : ""
                           }`}
                           onClick={degreesOpen}
@@ -308,72 +295,65 @@ const FilterScholarships = () => {
                       </div>
                     </div>
                   </div>
-                  {openDegrees ? (
-                    <>
-                      <div className="pb-[8px]  pt-[8px] ">
-                        {/* Search Degree */}
-                        <div className="relative mb-3">
-                          <input
-                            type="text"
-                            placeholder="Search Degree"
-                            value={searchDegree}
-                            onChange={(e) => setSearchDegree(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A] "
+                  {openDegrees && (
+                    <div className="pb-[8px] pt-[8px]">
+                      <div className="relative mb-3">
+                        <input
+                          type="text"
+                          placeholder="Search Degree"
+                          value={searchDegree}
+                          onChange={(e) => setSearchDegree(e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A]"
+                        />
+                        <svg
+                          className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           />
-                          <svg
-                            className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                        </div>
-                        {/* Degree Level List with Scrollbar */}
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {degreeLevels
-                            .filter((degree) =>
-                              degree
-                                .toLowerCase()
-                                .includes(searchDegree.toLowerCase()),
-                            )
-                            .map((degree, index) => (
-                              <label
-                                key={index}
-                                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
-                              >
-                                <input
-                                  type="checkbox"
-                                  className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded "
-                                />
-                                <span>{degree}</span>
-                              </label>
-                            ))}
-                        </div>
+                        </svg>
+                      </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {degreeLevels
+                          .filter((degree) =>
+                            degree
+                              .toLowerCase()
+                              .includes(searchDegree.toLowerCase()),
+                          )
+                          .map((degree, index) => (
+                            <label
+                              key={index}
+                              className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded"
+                              />
+                              <span>{degree}</span>
+                            </label>
+                          ))}
+                      </div>
 
-                        {/* Discover Button */}
-                        <div className="flex items-center justify-center mt-5">
-                          <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
-                            Discover
-                          </div>
+                      <div className="flex items-center justify-center mt-5">
+                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
+                          Discover
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
+                    </div>
                   )}
                 </div>
-                {/* Displine  */}
+
+                {/* Disciplines */}
                 <div className="shadow-lg px-2 pb-[24px]">
-                  {/* Degree Level Section */}
-                  <div className="mt-[24px] ">
-                    <div className="flex items-center justify-between ">
-                      <div className="text-[16px] text-[#605D64]">
+                  <div className="mt-[24px]">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[14px] md:text-[16px] text-[#605D64]">
                         Disciplines
                       </div>
                       <div>
@@ -383,7 +363,7 @@ const FilterScholarships = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className={` cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
+                          className={`cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
                             !openDispline ? "rotate-180" : ""
                           }`}
                           onClick={DisplineOpen}
@@ -397,74 +377,65 @@ const FilterScholarships = () => {
                       </div>
                     </div>
                   </div>
-                  {openDispline ? (
-                    <>
-                      <div className="pb-[8px]  pt-[8px] ">
-                        {/* Search Discipline */}
-                        <div className="relative mb-3">
-                          <input
-                            type="text"
-                            placeholder="Search Discipline"
-                            value={searchDiscipline}
-                            onChange={(e) =>
-                              setSearchDiscipline(e.target.value)
-                            }
-                            className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A] "
+                  {openDispline && (
+                    <div className="pb-[8px] pt-[8px]">
+                      <div className="relative mb-3">
+                        <input
+                          type="text"
+                          placeholder="Search Discipline"
+                          value={searchDiscipline}
+                          onChange={(e) => setSearchDiscipline(e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A]"
+                        />
+                        <svg
+                          className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           />
-                          <svg
-                            className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                        </div>
-                        {/* Discipline List with Scrollbar */}
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {disciplines
-                            .filter((discipline) =>
-                              discipline
-                                .toLowerCase()
-                                .includes(searchDiscipline.toLowerCase()),
-                            )
-                            .map((discipline, index) => (
-                              <label
-                                key={index}
-                                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
-                              >
-                                <input
-                                  type="checkbox"
-                                  className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
-                                />
-                                <span>{discipline}</span>
-                              </label>
-                            ))}
-                        </div>
+                        </svg>
+                      </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {disciplines
+                          .filter((discipline) =>
+                            discipline
+                              .toLowerCase()
+                              .includes(searchDiscipline.toLowerCase()),
+                          )
+                          .map((discipline, index) => (
+                            <label
+                              key={index}
+                              className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
+                              />
+                              <span>{discipline}</span>
+                            </label>
+                          ))}
+                      </div>
 
-                        {/* Discover Button */}
-                        <div className="flex items-center justify-center mt-5">
-                          <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
-                            Discover
-                          </div>
+                      <div className="flex items-center justify-center mt-5">
+                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
+                          Discover
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
+                    </div>
                   )}
                 </div>
+
                 {/* Scholarship Type */}
                 <div className="shadow-lg px-2 pb-[24px]">
-                  {/* Degree Level Section */}
-                  <div className="mt-[24px] ">
-                    <div className="flex items-center justify-between ">
-                      <div className="text-[16px] text-[#605D64]">
+                  <div className="mt-[24px]">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[14px] md:text-[16px] text-[#605D64]">
                         Scholarship Type
                       </div>
                       <div>
@@ -474,7 +445,7 @@ const FilterScholarships = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className={` cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
+                          className={`cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
                             !openScholarshipType ? "rotate-180" : ""
                           }`}
                           onClick={scholarshipTypeOpen}
@@ -488,74 +459,67 @@ const FilterScholarships = () => {
                       </div>
                     </div>
                   </div>
-                  {openScholarshipType ? (
-                    <>
-                      <div className="pb-[8px]  pt-[8px] ">
-                        {/* Search Scholarship Type */}
-                        <div className="relative mb-3">
-                          <input
-                            type="text"
-                            placeholder="Search Scholarship Type"
-                            value={searchScholarshipType}
-                            onChange={(e) =>
-                              setSearchScholarshipType(e.target.value)
-                            }
-                            className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A] "
+                  {openScholarshipType && (
+                    <div className="pb-[8px] pt-[8px]">
+                      <div className="relative mb-3">
+                        <input
+                          type="text"
+                          placeholder="Search Scholarship Type"
+                          value={searchScholarshipType}
+                          onChange={(e) =>
+                            setSearchScholarshipType(e.target.value)
+                          }
+                          className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A]"
+                        />
+                        <svg
+                          className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           />
-                          <svg
-                            className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                        </div>
-                        {/* Scholarship Type List with Scrollbar */}
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {scholarshipTypes
-                            .filter((type) =>
-                              type
-                                .toLowerCase()
-                                .includes(searchScholarshipType.toLowerCase()),
-                            )
-                            .map((type, index) => (
-                              <label
-                                key={index}
-                                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
-                              >
-                                <input
-                                  type="checkbox"
-                                  className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded "
-                                />
-                                <span>{type}</span>
-                              </label>
-                            ))}
-                        </div>
+                        </svg>
+                      </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {scholarshipTypes
+                          .filter((type) =>
+                            type
+                              .toLowerCase()
+                              .includes(searchScholarshipType.toLowerCase()),
+                          )
+                          .map((type, index) => (
+                            <label
+                              key={index}
+                              className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded"
+                              />
+                              <span>{type}</span>
+                            </label>
+                          ))}
+                      </div>
 
-                        {/* Discover Button */}
-                        <div className="flex items-center justify-center mt-5">
-                          <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
-                            Discover
-                          </div>
+                      <div className="flex items-center justify-center mt-5">
+                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
+                          Discover
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
+                    </div>
                   )}
                 </div>
-                {/* scholarship Deadline */}
+
+                {/* Scholarship Deadline */}
                 <div className="shadow-lg px-2 pb-[24px]">
-                  {/* scholarship Deadline */}
-                  <div className="mt-[24px] ">
-                    <div className="flex items-center justify-between ">
-                      <div className="text-[16px] text-[#605D64]">
+                  <div className="mt-[24px]">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[14px] md:text-[16px] text-[#605D64]">
                         Scholarship Deadline
                       </div>
                       <div>
@@ -565,7 +529,7 @@ const FilterScholarships = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className={` cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
+                          className={`cursor-pointer size-4 mt-1 font-semibold transition-transform duration-200 ${
                             !openScholarshipDeadline ? "rotate-180" : ""
                           }`}
                           onClick={scholarshipDeadlineOpen}
@@ -579,108 +543,100 @@ const FilterScholarships = () => {
                       </div>
                     </div>
                   </div>
-                  {openScholarshipDeadline ? (
-                    <>
-                      <div className="pb-[8px]  pt-[8px] ">
-                        {/* Search Deadline */}
-                        <div className="relative mb-3">
-                          <input
-                            type="text"
-                            placeholder="Search Deadline"
-                            value={searchDeadline}
-                            onChange={(e) => setSearchDeadline(e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A] "
+                  {openScholarshipDeadline && (
+                    <div className="pb-[8px] pt-[8px]">
+                      <div className="relative mb-3">
+                        <input
+                          type="text"
+                          placeholder="Search Deadline"
+                          value={searchDeadline}
+                          onChange={(e) => setSearchDeadline(e.target.value)}
+                          className="w-full px-3 py-2 border border-gray-300 bg-[#FAFAFA] rounded-lg text-sm focus:outline-none focus:border-[#74BF1A]"
+                        />
+                        <svg
+                          className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                           />
-                          <svg
-                            className="absolute right-3 top-2.5 w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
-                          </svg>
-                        </div>
-                        {/* Deadline List with Scrollbar */}
-                        <div className="space-y-2 max-h-48 overflow-y-auto">
-                          {scholarshipDeadline
-                            .filter((month) =>
-                              month
-                                .toLowerCase()
-                                .includes(searchDeadline.toLowerCase()),
-                            )
-                            .map((month, index) => (
-                              <label
-                                key={index}
-                                className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
-                              >
-                                <input
-                                  type="checkbox"
-                                  className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
-                                />
-                                <span>{month}</span>
-                              </label>
-                            ))}
-                        </div>
+                        </svg>
+                      </div>
+                      <div className="space-y-2 max-h-48 overflow-y-auto">
+                        {scholarshipDeadline
+                          .filter((month) =>
+                            month
+                              .toLowerCase()
+                              .includes(searchDeadline.toLowerCase()),
+                          )
+                          .map((month, index) => (
+                            <label
+                              key={index}
+                              className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[rgba(116,191,26,1)] cursor-pointer"
+                            >
+                              <input
+                                type="checkbox"
+                                className="w-4 h-4 text-[rgba(116,191,26,1)] border-gray-300 rounded hover:border-[#74BF1A]"
+                              />
+                              <span>{month}</span>
+                            </label>
+                          ))}
+                      </div>
 
-                        {/* Discover Button */}
-                        <div className="flex items-center justify-center mt-5">
-                          <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
-                            Discover
-                          </div>
+                      <div className="flex items-center justify-center mt-5">
+                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#071f4a] transition-colors">
+                          Discover
                         </div>
                       </div>
-                    </>
-                  ) : (
-                    ""
+                    </div>
                   )}
                 </div>
               </div>
             </div>
           </div>
+
           {/* Right-Side */}
-          <div className="w-[923px] h-[1621px] ">
-            {/* Top - Part  */}
-            <div className="h-auto w-auto py-[16px] flex justify-between items-center border border-l-0 border-r-0 border-t-0 border-b-[#79767D] ">
-              <div className="text-[24px] font-semibold text-[#322F35]">
+          <div className="w-full flex-1 h-auto">
+            {/* Top - Part */}
+            <div className="h-auto w-auto py-[12px] md:py-[16px] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 border border-l-0 border-r-0 border-t-0 border-b-[#79767D]">
+              <div className="text-[18px] sm:text-[20px] md:text-[24px] font-semibold text-[#322F35]">
                 785673 Results Found
               </div>
-              <div className="flex gap-5 items-center">
+              <div className="flex flex-wrap gap-3 sm:gap-5 items-center">
                 <div>
-                  {" "}
-                  <label className="flex items-center space-x-2 text-sm text-[#322F35] hover:text-#092962] cursor-pointer">
+                  <label className="flex items-center space-x-2 text-xs sm:text-sm text-[#322F35] cursor-pointer">
                     <input
                       type="checkbox"
-                      className="w-4 h-4  border-gray-300 rounded "
+                      className="w-4 h-4 border-gray-300 rounded"
                     />
                     <span>Recommended Courses</span>
-                  </label>{" "}
+                  </label>
                 </div>
                 <div>
-                  <div className="w-[120px] h-[44px] rounded-[8px] bg-[#74BF1A] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#67a51b] transition-colors">
+                  <div className="w-[100px] sm:w-[120px] h-[38px] sm:h-[44px] rounded-[8px] bg-[#74BF1A] text-white flex items-center justify-center text-[12px] sm:text-[14px] font-semibold cursor-pointer hover:bg-[#67a51b] transition-colors">
                     Apply Now
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Sort By  */}
-
-            <div className="w-auto h-auto mt-5 flex justify-between">
-              <div className="flex  items-center gap-2">
-                <div className="text-[#322F35] font-medium text-[16px] ">
+            {/* Sort By */}
+            <div className="w-auto h-auto mt-4 md:mt-5 flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between">
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="text-[#322F35] font-medium text-[14px] sm:text-[16px]">
                   Sort by:{" "}
                 </div>
                 <div className="relative">
                   <div
-                    className="w-[164px] h-[42px] bg-white flex items-center justify-between text-[16px] font-medium text-[#605D64] px-4 rounded-[4px] border border-gray-200 cursor-pointer hover:border-[#74BF1A] z-50"
+                    className="w-[140px] sm:w-[164px] h-[38px] sm:h-[42px] bg-white flex items-center justify-between text-[14px] sm:text-[16px] font-medium text-[#605D64] px-3 sm:px-4 rounded-[4px] border border-gray-200 cursor-pointer hover:border-[#74BF1A] z-50"
                     onClick={selectOptionDropdown}
                   >
-                    <div>{selectedOption}</div>
+                    <div className="truncate">{selectedOption}</div>
                     <div>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -702,12 +658,12 @@ const FilterScholarships = () => {
                   </div>
 
                   {selectOption && (
-                    <div className="absolute left-0 mt-1 w-[164px] bg-white shadow-xl rounded-lg py-2 z-50 border border-gray-100">
+                    <div className="absolute left-0 mt-1 w-[140px] sm:w-[164px] bg-white shadow-xl rounded-lg py-2 z-50 border border-gray-100 max-h-[300px] overflow-y-auto">
                       {degreeLevels.map((item) => (
                         <div
                           key={item}
                           onClick={() => handleSortSelect(item)}
-                          className="px-5 py-3 text-sm text-gray-800 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 cursor-pointer"
+                          className="px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm text-gray-800 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 cursor-pointer"
                         >
                           {item}
                         </div>
@@ -718,14 +674,14 @@ const FilterScholarships = () => {
               </div>
 
               {/* Currency Dropdown */}
-              <div className="relative">
+              <div className="relative w-full sm:w-auto">
                 <div
-                  className={`w-[319px] h-[49px] bg-white rounded-[4px] flex pl-2 text-[#605D64] border cursor-pointer hover:border-[#74BF1A] ${
+                  className={`w-full sm:w-[280px] md:w-[319px] h-[42px] sm:h-[49px] bg-white rounded-[4px] flex pl-2 text-[#605D64] border cursor-pointer hover:border-[#74BF1A] ${
                     selectCurrency ? "border-[#74BF1A]" : "border-gray-200"
                   }`}
                   onClick={selectCurrencyDropdown}
                 >
-                  <div className="flex gap-32 items-center w-full">
+                  <div className="flex items-center justify-between w-full pr-2">
                     <div className="flex gap-2 items-center">
                       <div>
                         <svg
@@ -734,7 +690,7 @@ const FilterScholarships = () => {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="size-5 text-[#74BF1A]"
+                          className="size-4 sm:size-5 text-[#74BF1A]"
                         >
                           <path
                             strokeLinecap="round"
@@ -743,7 +699,7 @@ const FilterScholarships = () => {
                           />
                         </svg>
                       </div>
-                      <div className="text-[16px] font-medium text-[#605D64] flex items-center gap-1">
+                      <div className="text-[13px] sm:text-[16px] font-medium text-[#605D64] truncate max-w-[180px] sm:max-w-[220px]">
                         {selectedCurrency}
                       </div>
                     </div>
@@ -768,14 +724,14 @@ const FilterScholarships = () => {
                   </div>
                 </div>
 
-                {/* Currency Dropdown Menu - positioned directly under currency div */}
+                {/* Currency Dropdown Menu */}
                 {selectCurrency && (
-                  <div className="absolute top-full left-0 mt-1 w-[319px] bg-white shadow-xl rounded-lg py-2 z-50 border border-gray-100">
+                  <div className="absolute top-full left-0 mt-1 w-full sm:w-[280px] md:w-[319px] bg-white shadow-xl rounded-lg py-2 z-50 border border-gray-100 max-h-[300px] overflow-y-auto">
                     {currencies.map((currency) => (
                       <div
                         key={currency}
                         onClick={() => handleCurrencySelect(currency)}
-                        className="px-5 py-3 text-sm text-gray-800 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 cursor-pointer"
+                        className="px-4 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm text-gray-800 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 cursor-pointer"
                       >
                         {currency}
                       </div>
@@ -785,19 +741,19 @@ const FilterScholarships = () => {
               </div>
             </div>
 
-            <div className="w-auto h-[923px] mt-8 flex gap-6    ">
-              {/* Cards  */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[32px] justify-items-center">
+            {/* Cards */}
+            <div className="w-auto h-auto mt-6 md:mt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-[32px] justify-items-center">
                 {cardLength.map((item) => (
-                  <div key={item.id}>
-                    <div className="w-[286px] h-[321px] rounded-[8px] border border-t-[4px] border-[#74BF1A] bg-white shadow-lg border-l-0 border-r-0 border-b-0 ">
-                      <div className="">
-                        <div className="font-bold text-[16px] text-[#48464C] ml-5 py-5">
+                  <div key={item.id} className="w-full max-w-[286px]">
+                    <div className="w-full h-auto rounded-[8px] border border-t-[4px] border-[#74BF1A] bg-white shadow-lg border-l-0 border-r-0 border-b-0 hover:shadow-xl transition-shadow duration-300">
+                      <div>
+                        <div className="font-bold text-[14px] sm:text-[16px] text-[#48464C] mx-3 sm:mx-5 py-4 sm:py-5 text-center sm:text-left">
                           $1000 International Student <br /> Scholarship
                         </div>
 
-                        <div className=" flex  flex-col  mx-5">
-                          <div className="flex flex-col gap-2 text-[#062254] text-[12px]">
+                        <div className="flex flex-col mx-3 sm:mx-5">
+                          <div className="flex flex-col gap-2 text-[#062254] text-[10px] sm:text-[12px]">
                             <div className="flex gap-1 items-center">
                               <div>
                                 <svg
@@ -806,7 +762,7 @@ const FilterScholarships = () => {
                                   viewBox="0 0 24 24"
                                   strokeWidth={1.5}
                                   stroke="currentColor"
-                                  className="size-6"
+                                  className="size-4 sm:size-6"
                                 >
                                   <path
                                     strokeLinecap="round"
@@ -815,7 +771,7 @@ const FilterScholarships = () => {
                                   />
                                 </svg>
                               </div>
-                              <div>United Kingdom</div>
+                              <div className="truncate">United Kingdom</div>
                             </div>
                             <div className="flex gap-1 items-center">
                               <div>
@@ -825,7 +781,7 @@ const FilterScholarships = () => {
                                   viewBox="0 0 24 24"
                                   strokeWidth={1.5}
                                   stroke="currentColor"
-                                  className="size-6"
+                                  className="size-4 sm:size-6"
                                 >
                                   <path
                                     strokeLinecap="round"
@@ -834,12 +790,9 @@ const FilterScholarships = () => {
                                   />
                                 </svg>
                               </div>
-                              <div>Arts & Humanities</div>
+                              <div className="truncate">Arts & Humanities</div>
                             </div>
-                            <div
-                              className="flex gap-1  items-center
-                            "
-                            >
+                            <div className="flex gap-1 items-center">
                               <div>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -847,7 +800,7 @@ const FilterScholarships = () => {
                                   viewBox="0 0 24 24"
                                   strokeWidth={1.5}
                                   stroke="currentColor"
-                                  className="size-6"
+                                  className="size-4 sm:size-6"
                                 >
                                   <path
                                     strokeLinecap="round"
@@ -858,7 +811,7 @@ const FilterScholarships = () => {
                               </div>
                               <div>Master</div>
                             </div>
-                            <div className="flex gap-1 items-center ">
+                            <div className="flex gap-1 items-center">
                               <div>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -866,7 +819,7 @@ const FilterScholarships = () => {
                                   viewBox="0 0 24 24"
                                   strokeWidth={1.5}
                                   stroke="currentColor"
-                                  className="size-6"
+                                  className="size-4 sm:size-6"
                                 >
                                   <path
                                     strokeLinecap="round"
@@ -882,7 +835,7 @@ const FilterScholarships = () => {
                               </div>
                               <div>On Campus</div>
                             </div>
-                            <div className="flex gap-1 items-center ">
+                            <div className="flex gap-1 items-center">
                               <div>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -890,7 +843,7 @@ const FilterScholarships = () => {
                                   viewBox="0 0 24 24"
                                   strokeWidth={1.5}
                                   stroke="currentColor"
-                                  className="size-6"
+                                  className="size-4 sm:size-6"
                                 >
                                   <path
                                     strokeLinecap="round"
@@ -899,18 +852,18 @@ const FilterScholarships = () => {
                                   />
                                 </svg>
                               </div>
-                              <div>18,000 PLN/Year</div>
+                              <div className="truncate">18,000 PLN/Year</div>
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div className="mt-5 flex items-center gap-2 mx-5">
-                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#0b3a7a] transition-colors">
-                          <div>Discover</div>
+                      <div className="mt-4 sm:mt-5 flex flex-col sm:flex-row items-center gap-2 mx-3 sm:mx-5 pb-4">
+                        <div className="w-full sm:w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[12px] sm:text-[14px] font-semibold cursor-pointer hover:bg-[#0b3a7a] transition-colors">
+                          Discover
                         </div>
-                        <div className="w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[14px] font-semibold cursor-pointer hover:bg-[#0b3a7a] transition-colors">
-                          <div>Apply</div>
+                        <div className="w-full sm:w-[124px] h-[38px] rounded-[4px] bg-[#092962] text-white flex items-center justify-center text-[12px] sm:text-[14px] font-semibold cursor-pointer hover:bg-[#0b3a7a] transition-colors">
+                          Apply
                         </div>
                       </div>
                     </div>

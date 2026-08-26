@@ -364,28 +364,28 @@ const NavBar = () => {
               {mobileDestDropdownOpen && (
                 <div className="ml-4 space-y-2 pb-2">
                   <Link
-                    to="/destinations/uk"
+                    to="/destinations"
                     className="block py-2 px-3 text-sm text-gray-600 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 rounded transition-colors"
                     onClick={closeMobileMenu}
                   >
                     UK
                   </Link>
                   <Link
-                    to="/destinations/australia"
+                    to="/destinations"
                     className="block py-2 px-3 text-sm text-gray-600 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 rounded transition-colors"
                     onClick={closeMobileMenu}
                   >
                     Australia
                   </Link>
                   <Link
-                    to="/destinations/canada"
+                    to="/destinations"
                     className="block py-2 px-3 text-sm text-gray-600 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 rounded transition-colors"
                     onClick={closeMobileMenu}
                   >
                     Canada
                   </Link>
                   <Link
-                    to="/destinations/usa"
+                    to="/destinations"
                     className="block py-2 px-3 text-sm text-gray-600 hover:text-[rgba(116,191,26,1)] hover:bg-gray-50 rounded transition-colors"
                     onClick={closeMobileMenu}
                   >
