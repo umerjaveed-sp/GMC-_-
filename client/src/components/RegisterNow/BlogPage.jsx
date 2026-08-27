@@ -34,7 +34,7 @@ const BlogPage = () => {
   return (
     <section className="w-full h-auto">
       {/* Hero Section */}
-      <div>
+      <div className="overflow-hidden">
         <div
           className="w-full h-[300px] sm:h-[500px] md:h-[600px] lg:h-[774px] bg-cover bg-center bg-no-repeat mb-6 sm:mb-8 lg:mb-10 flex items-center justify-center"
           style={{ backgroundImage: `url(${people})` }}
