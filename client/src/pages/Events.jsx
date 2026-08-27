@@ -9,7 +9,7 @@ import RegisterNow from "../components/RegisterNow/RegisterNow";
 const Events = () => {
   return (
     <>
-      <div>
+      <div className="overflow-hidden">
         <Hero />
         <UpcomingEvents />
         <PastEvents />
