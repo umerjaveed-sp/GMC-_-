@@ -143,9 +143,13 @@ function RegisterNow() {
 
             {/* Blog Content */}
             <div className="w-full h-auto py-4 px-2 sm:px-4 md:px-[8px] text-gray-800 space-y-4 sm:space-y-5 mt-6 sm:mt-8">
-              <h1 className="text-2xl sm:text-3xl md:text-[50px] font-bold">
-                Joins the Global Minds Consultant Study Abroad Expo 2025
-              </h1>
+              <div className="text-xl sm:text-2xl md:text-4xl lg:text-[50px] font-bold space-y-4 leading-tight">
+                Joins the Global Minds
+                <br />
+                Consultant Study Abroad
+                <br />
+                Expo 2025
+              </div>
               <h2 className="text-xl sm:text-2xl md:text-[30px] font-semibold">
                 The Grand Study Abroad Expo 2025 awaits you!
               </h2>
@@ -225,7 +229,7 @@ function RegisterNow() {
           </div>
 
           {/* Registration Form */}
-          <div className="w-full lg:w-[498px] h-auto p-4 sm:p-5 bg-white rounded-[16px] shadow-md">
+          <div className="w-full lg:w-[498px] h-auto lg:h-[570px] p-4 sm:p-5 bg-white rounded-[16px] shadow-md">
             <div className="flex items-center justify-center mb-6 sm:mb-8 lg:mb-10">
               <div className="text-xl sm:text-2xl md:text-[30px] font-bold text-gray-800">
                 Reserve Your Seat
